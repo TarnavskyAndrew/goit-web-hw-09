@@ -10,7 +10,8 @@ from handlers.commands import (
     show_all_contacts,
     add_birthday,
     show_birthday,
-    birthdays
+    birthdays,
+    delete_contact
 )
 
 def parse_input(user_input):           
@@ -33,12 +34,9 @@ def main():
     # 3. Завантажуємо адресну книгу з файлу та продовжуємо роботу
     book = AddressBook.load_data()  
     
-
-    # 5. Виводимо список доступних команд  
-    
-
+    # 5. Виводимо список доступних команд      
     while True:
-        user_input = input("Enter a command: ")
+        user_input = input(f"{Fore.YELLOW}>{Fore.RESET} Enter a command: ")   
         command, args = parse_input(user_input)
 
         if not command:
@@ -73,7 +71,10 @@ def main():
             view.display_message(show_birthday(args, book))
 
         elif command == "birthdays":            # birthdays - показати список контактів, яких потрібно привітати по днях на наступному тижні.
-            view.display_message(birthdays(args, book))          
+            view.display_message(birthdays(args, book))   
+            
+        elif command == "delete":               # delete [ім'я] – видалити контакт з адресної книги.
+            view.display_message(delete_contact(args, book))            
 
                     
         else:

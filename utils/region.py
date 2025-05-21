@@ -7,7 +7,7 @@ def get_supported_regions_from_file(filepath):
         return [row["A2"].upper() for row in reader if row["A2"].strip()]
 
 
-def get_valid_region(view, filepath="data/country_codes.csv"):
+def get_valid_region(view, filepath="data/country_codes.csv"):    #питає у користувача регіон
     country_codes = get_supported_regions_from_file(filepath)
     
     while True:     

@@ -1,4 +1,4 @@
-from models.record import Record
+from models.Record import Record
 from utils.decorators import input_error
 
 @input_error
@@ -66,3 +66,14 @@ def birthdays(args, book):
     if upcoming:
         return "\n".join([f"{name} — Greetings: {date.strftime('%d.%m.%Y')}" for name, date in upcoming])
     return "No upcoming birthdays."
+
+@input_error
+# Функція видаляє контакт з телефонної книги. Якщо контакт не знайдено — повертає повідомлення про помилку.
+def delete_contact(args, book):
+    name = args[0]
+    if book.find(name):
+        book.delete(name)
+        return f"Contact {name} deleted."
+    return f"Contact {name} not found."
+
+

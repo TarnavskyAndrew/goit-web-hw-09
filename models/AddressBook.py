@@ -12,8 +12,7 @@ class AddressBook(UserDict):
     def find(self, name): # повертає на ім'я 
         return self.data.get(name) 
     
-    def delete(self, name): # видаляє на ім'я 
-        
+    def delete(self, name): # видаляє на ім'я         
         if name in self.data:
             del self.data[name]
         else:                
@@ -67,11 +66,9 @@ class AddressBook(UserDict):
             
     # Метод завантажує об'єкт адресної книги з файлу у форматі pickle.
     @staticmethod 
-    def load_data(filename="data/addressbook.pkl"):
-        
+    def load_data(filename="data/addressbook.pkl"):        
         try:
-            with open(filename, "rb") as file:
-                
+            with open(filename, "rb") as file:                
                 return pickle.load(file)
         except FileNotFoundError:
             return AddressBook()  # Повернення нової адресної книги, якщо файл не знайдено
