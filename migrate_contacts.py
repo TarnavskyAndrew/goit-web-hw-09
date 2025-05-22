@@ -1,4 +1,4 @@
-from models.AddressBook import AddressBook
+from models.address_book import AddressBook
 from models.fields import Phone
 from utils.phone_utils import load_phone_codes
 

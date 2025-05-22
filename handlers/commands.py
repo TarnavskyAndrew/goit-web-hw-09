@@ -1,4 +1,4 @@
-from models.Record import Record
+from models.record import Record
 from utils.decorators import input_error
 
 @input_error

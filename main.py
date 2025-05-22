@@ -1,6 +1,6 @@
 # bot_assistant
 from colorama import Fore
-from models.AddressBook import AddressBook
+from models.address_book import AddressBook
 from views.console_view import ConsoleView
 from utils.region import get_valid_region
 from handlers.commands import (
