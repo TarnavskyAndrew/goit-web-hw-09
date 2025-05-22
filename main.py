@@ -34,7 +34,7 @@ def main():
     # 3. Завантажуємо адресну книгу з файлу та продовжуємо роботу
     book = AddressBook.load_data()  
     
-    # 5. Виводимо список доступних команд      
+   
     while True:
         user_input = input(f"{Fore.YELLOW}>{Fore.RESET} Enter a command: ")   
         command, args = parse_input(user_input)
